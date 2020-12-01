@@ -1,0 +1,343 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+*,
+*::before,
+*::after {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  scroll-behavior: smooth;
+  background-color: #ffffff;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+  overflow-y: scroll;
+}
+
+a:hover {
+  text-decoration: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Roboto Mono", monospace;
+}
+section {
+  padding: 40px 0;
+  overflow: hidden;
+}
+
+/*--------------------------------------------------------------
+# Header
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+.navbar {
+  width: 100%;
+  height: 86px;
+  box-shadow: 2px 0px 10px 1px rgba(0, 0, 0, 0.2);
+  z-index: 10000;
+  transition: 450ms;
+  background-color: #f5f5f5;
+  position: fixed;
+}
+.navbar .navbar-nav {
+  transition: 450ms;
+}
+.navbar .navbar-nav .nav-link {
+  color: #212121;
+  padding: 10px 20px;
+  border-radius: 5px;
+  margin-right: 5px;
+}
+.nav-pills .nav-link.active,
+.nav-pills .show > .nav-link {
+  background: #2196f3;
+  color: #f8f9fa;
+}
+.navbar .navbar-nav .nav-link:hover {
+  color: #f8f9fa;
+  transition: 450ms;
+  background: #2196f3;
+}
+
+.navbar .container .nav-contact,
+.navbar .container .easy-nav {
+  display: none;
+}
+.burger {
+  display: none;
+  cursor: pointer;
+  border: 2px solid #2196f3;
+}
+.burger div {
+  width: 25px;
+  height: 3.5px;
+  background-color: #2196f3;
+  margin: 5px;
+  padding: 1.5px;
+  transition: 450ms;
+}
+
+.sticky {
+  top: 0;
+  width: 100%;
+  height: 70px;
+  transition: 450ms;
+  padding: 0px 15px;
+}
+
+/* Get Startet Button */
+.get-started-btn {
+  color: #2196f3;
+  border-radius: 5px;
+  padding: 6px 25px 8px 25px;
+  white-space: nowrap;
+  transition: 0.3s;
+  font-size: 17px;
+  font-weight: 500;
+  display: inline-block;
+  border: 2px solid #2196f3;
+}
+
+.get-started-btn:hover {
+  background-color: #2196f3;
+  color: #f5f5f5;
+}
+
+@media only screen and (max-width: 768px) {
+  .navbar .navbar-brand .profile-logo {
+    width: 40px;
+    height: 40px;
+  }
+  .navbar {
+    height: 65px;
+    padding: 0px 15px;
+    box-shadow: 2px 5px 5px 1px rgba(0, 0, 0, 0.15);
+  }
+  .navbar-nav {
+    position: absolute;
+    right: -100%;
+    height: 100vh;
+    top: 65px;
+    width: 65%;
+    background-color: #f5f5f5;
+    padding-top: 15px;
+    border-left: 1px solid rgba(0, 0, 0, 0.125);
+  }
+
+  .navbar .container .navbar-nav .nav-link {
+    margin-bottom: 5px;
+  }
+  .burger,
+  .navbar .container .easy-nav {
+    display: block;
+  }
+  .nav-active {
+    right: 0px;
+  }
+  .toggle .line1 {
+    transform: rotate(-45deg) translate(-5px, 6px);
+    background-color: #ff4081;
+  }
+  .toggle .line2 {
+    opacity: 0;
+  }
+  .toggle .line3 {
+    transform: rotate(45deg) translate(-5px, -6px);
+    background-color: #ff4081;
+  }
+  .burg {
+    border: 2px solid #ff4081;
+  }
+  .navbar .container .nav-contact {
+    display: block;
+    padding-left: 15px;
+  }
+  .navbar .container .nav-contact ul li {
+    list-style: none;
+    font-size: 14px;
+  }
+  .navbar .container .nav-contact a {
+    padding-right: 5px;
+    color: #757575;
+    font-size: 18px;
+  }
+  .navbar .container .nav-contact a .fa-facebook {
+    color: #4267b2;
+  }
+  .navbar .container .nav-contact a .fa-whatsapp {
+    color: #4ac959;
+  }
+  .navbar .container .nav-contact a .fa-twitter {
+    color: #00acee;
+  }
+  .navbar .container .nav-contact a .fa-instagram {
+    color: #e1306c;
+  }
+  .navbar .container .nav-contact a .fa-linkedin {
+    color: #2867b2;
+  }
+  .navbar .container .nav-contact a .fa-github {
+    color: #333;
+  }
+  .navbar .container .nav-contact a .fa-telegram-plane {
+    color: #0088cc;
+  }
+  .sticky {
+    width: 100%;
+    height: 55px;
+    transition: 450ms;
+    padding: 0px 15px;
+  }
+  .sticky .navbar-nav {
+    height: 100vh;
+    top: 55px;
+    transition: 450ms;
+  }
+}
+
+/*--------------------------------------------------------------
+# Navigation Menu
+--------------------------------------------------------------*/
+
+/*--------------------------------------------------------------
+# MY HERO
+--------------------------------------------------------------*/
+#hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: #2196f3;
+  /* background: -webkit-linear-gradient(80deg, #2196f3 50%, transparent 50%),
+    url(../images/hero-bg.jpg) no-repeat; */
+  background-size: cover;
+}
+#particles-js {
+  position: absolute;
+  background: url(../images/hero-bg.jpg) center no-repeat;
+  background-size: cover;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  clip-path: circle(75% at right -25%);
+}
+#hero .container {
+  padding-top: 84px;
+}
+#hero h1 {
+  margin-top: 10px;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 64px;
+  color: #ffffff;
+  font-weight: bold;
+}
+
+#hero h2 {
+  margin: 10px 0 0 0;
+  font-size: 20px;
+  color: #f8f9fa;
+  opacity: 0.7;
+  font-weight: bold;
+}
+
+#hero .btn-get-started {
+  font-family: "Poppins", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 10px 28px;
+  border-radius: 5px;
+  transition: 0.5s;
+  margin-top: 30px;
+  color: #2196f3;
+  border: 2px solid #fff;
+  background: #f5f5f5;
+}
+
+#hero .btn-get-started:hover {
+  background: #2196f3;
+  color: #f5f5f5;
+  border: 2px solid #2196f3;
+}
+
+#hero .animated {
+  animation: up-down 2s ease-in-out infinite alternate-reverse both;
+}
+
+@media (max-width: 991px) {
+  #hero {
+    text-align: center;
+  }
+  #hero .container,
+  #hero .container-fluid {
+    padding-top: 68px;
+  }
+
+  #hero .hero-img {
+    text-align: center;
+  }
+  #hero .hero-img img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 768px) {
+  #hero h1 {
+    margin-top: 20px;
+    font-size: 26px;
+    line-height: 36px;
+  }
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+  }
+  #hero .hero-img img {
+    width: 50%;
+  }
+}
+
+@media (max-width: 600px) {
+  #hero .hero-img img {
+    width: 80%;
+  }
+  #hero h1 {
+    margin-top: 90px;
+  }
+}
+
+@-webkit-keyframes up-down {
+  0% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes up-down {
+  0% {
+    transform: translateY(8px);
+  }
+  100% {
+    transform: translateY(-8px);
+  }
+}
+/*--------------------------------------------------------------
+# MY HERO
+--------------------------------------------------------------*/
+#about {
+  background-color: #212121;
+}
